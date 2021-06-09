@@ -30,6 +30,14 @@ class MyLoginAdmin(ppm.LoginAdmin):
     def __init__(self, parent):
         self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
         ppm.LoginAdmin.__init__(self, parent)
+        self.tabelAdmin = akunAdmin.AkunAdmin()
+
+    def OnButtonClickLogin( self, event ):
+        rowCount = self.tabelAdmin.getUserByUsernameAndPassword(self.username.GetValue(), self.password.GetValue())
+        if rowCount == 1:
+            event = MyFrameAdmin(parent=None)
+            event.Show()
+            self.Destroy()
 
 app = wx.App()
 frame = MyBeranda(parent=None)

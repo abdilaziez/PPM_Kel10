@@ -612,16 +612,16 @@ class LoginAdmin ( wx.Dialog ):
 
 		fgSizer2.Add( self.m_staticText26, 0, wx.ALL, 5 )
 
-		self.username1 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer2.Add( self.username1, 0, wx.ALL, 5 )
+		self.username = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer2.Add( self.username, 0, wx.ALL, 5 )
 
 		self.m_staticText27 = wx.StaticText( self, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText27.Wrap( -1 )
 
 		fgSizer2.Add( self.m_staticText27, 0, wx.ALL, 5 )
 
-		self.username = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer2.Add( self.username, 0, wx.ALL, 5 )
+		self.password = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer2.Add( self.password, 0, wx.ALL, 5 )
 
 
 		fgSizer2.Add( ( 0, 0), 1, wx.EXPAND, 5 )
@@ -636,7 +636,15 @@ class LoginAdmin ( wx.Dialog ):
 
 		self.Centre( wx.BOTH )
 
+		# Connect Events
+		self.btn_login.Bind( wx.EVT_BUTTON, self.OnButtonClickLogin )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def OnButtonClickLogin( self, event ):
+		event.Skip()
 
 
