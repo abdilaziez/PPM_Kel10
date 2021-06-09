@@ -1,19 +1,37 @@
 import ppm 
 import wx
-from dbCon import MySql
+from Database import akunAdmin
 
-class MyGui(ppm.FramePengguna):
+class MyBeranda(ppm.Beranda):
+    def __init__(self, parent):
+        self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
+        ppm.Beranda.__init__(self, parent)
+
+    def OnButtonClickFramePengguna( self, event ):
+        event = MyFramePengguna(parent=None)
+        event.Show()
+        self.Destroy()
+
+    def OnButtonClickFrameAdmin( self, event ):
+        event = MyLoginAdmin(None)
+        event.Show()
+
+class MyFramePengguna(ppm.FramePengguna):
     def __init__(self, parent):
         self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
         ppm.FramePengguna.__init__(self, parent)
-        self.tipeMakanan()
 
-    def tipeMakanan(self):
-        tipe_makanan = MySql.read("SELECT nama_jenis_makanan FROM jenis_makanan")
-        for index in tipe_makanan:
-            print(index[0])
+class MyFrameAdmin(ppm.FrameAdmin):
+    def __init__(self, parent):
+        self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
+        ppm.FrameAdmin.__init__(self, parent)
+
+class MyLoginAdmin(ppm.LoginAdmin):
+    def __init__(self, parent):
+        self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
+        ppm.LoginAdmin.__init__(self, parent)
 
 app = wx.App()
-frame = MyGui(parent=None)
+frame = MyBeranda(parent=None)
 frame.Show()
 app.MainLoop()

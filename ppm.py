@@ -10,6 +10,48 @@
 import wx
 import wx.xrc
 import wx.aui
+import wx.grid
+
+###########################################################################
+## Class Beranda
+###########################################################################
+
+class Beranda ( wx.Frame ):
+
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+		bSizer26 = wx.BoxSizer( wx.VERTICAL )
+
+		self.goFramePengguna = wx.Button( self, wx.ID_ANY, u"Pengguna", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer26.Add( self.goFramePengguna, 0, wx.ALL, 5 )
+
+		self.goFrameAdmin = wx.Button( self, wx.ID_ANY, u"Admin", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer26.Add( self.goFrameAdmin, 0, wx.ALL, 5 )
+
+
+		self.SetSizer( bSizer26 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+		# Connect Events
+		self.goFramePengguna.Bind( wx.EVT_BUTTON, self.OnButtonClickFramePengguna )
+		self.goFrameAdmin.Bind( wx.EVT_BUTTON, self.OnButtonClickFrameAdmin )
+
+	def __del__( self ):
+		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def OnButtonClickFramePengguna( self, event ):
+		event.Skip()
+
+	def OnButtonClickFrameAdmin( self, event ):
+		event.Skip()
+
 
 ###########################################################################
 ## Class FramePengguna
@@ -369,15 +411,228 @@ class FramePengguna ( wx.Frame ):
 		self.Kalkulator_Porsi_Makanan.SetSizer( bSizer26 )
 		self.Kalkulator_Porsi_Makanan.Layout()
 		bSizer26.Fit( self.Kalkulator_Porsi_Makanan )
-		self.m_auinotebook1.AddPage( self.Kalkulator_Porsi_Makanan, u"Kalkulator Porsi Makanan", True, wx.NullBitmap )
-		self.m_panel6 = wx.Panel( self.m_auinotebook1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.m_auinotebook1.AddPage( self.m_panel6, u"Login Admin", False, wx.NullBitmap )
+		self.m_auinotebook1.AddPage( self.Kalkulator_Porsi_Makanan, u"Kalkulator Porsi Makanan", False, wx.NullBitmap )
 
 		bSizer1.Add( self.m_auinotebook1, 1, wx.EXPAND |wx.ALL, 5 )
 
 
 		self.SetSizer( bSizer1 )
 		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+	def __del__( self ):
+		pass
+
+
+###########################################################################
+## Class FrameAdmin
+###########################################################################
+
+class FrameAdmin ( wx.Frame ):
+
+	def __init__( self, parent ):
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+		bSizer79 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_auinotebook4 = wx.aui.AuiNotebook( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.aui.AUI_NB_DEFAULT_STYLE )
+		self.m_panel20 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		fgSizer7 = wx.FlexGridSizer( 0, 2, 0, 0 )
+		fgSizer7.SetFlexibleDirection( wx.BOTH )
+		fgSizer7.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+
+		self.m_staticText79 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Jenis Makanan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText79.Wrap( -1 )
+
+		fgSizer7.Add( self.m_staticText79, 0, wx.ALL, 5 )
+
+		self.m_textCtrl19 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.m_textCtrl19, 0, wx.ALL, 5 )
+
+		self.m_staticText80 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Nama Makanan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText80.Wrap( -1 )
+
+		fgSizer7.Add( self.m_staticText80, 0, wx.ALL, 5 )
+
+		self.m_textCtrl20 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.m_textCtrl20, 0, wx.ALL, 5 )
+
+		self.m_staticText81 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Dewasa", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText81.Wrap( -1 )
+
+		fgSizer7.Add( self.m_staticText81, 0, wx.ALL, 5 )
+
+		self.m_textCtrl18 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.m_textCtrl18, 0, wx.ALL, 5 )
+
+		self.m_staticText82 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Bayi", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText82.Wrap( -1 )
+
+		fgSizer7.Add( self.m_staticText82, 0, wx.ALL, 5 )
+
+		self.m_textCtrl21 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.m_textCtrl21, 0, wx.ALL, 5 )
+
+		self.m_staticText83 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Anak (1-2 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText83.Wrap( -1 )
+
+		fgSizer7.Add( self.m_staticText83, 0, wx.ALL, 5 )
+
+		self.m_textCtrl22 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.m_textCtrl22, 0, wx.ALL, 5 )
+
+		self.m_staticText84 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Anak (4-10 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText84.Wrap( -1 )
+
+		fgSizer7.Add( self.m_staticText84, 0, wx.ALL, 5 )
+
+		self.m_textCtrl23 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.m_textCtrl23, 0, wx.ALL, 5 )
+
+		self.m_staticText85 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Anak (11-18 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText85.Wrap( -1 )
+
+		fgSizer7.Add( self.m_staticText85, 0, wx.ALL, 5 )
+
+		self.m_textCtrl24 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.m_textCtrl24, 0, wx.ALL, 5 )
+
+
+		fgSizer7.Add( ( 0, 0), 1, wx.EXPAND, 5 )
+
+		self.btn_simpan = wx.Button( self.m_panel20, wx.ID_ANY, u"Simpan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.btn_simpan, 0, wx.ALL, 5 )
+
+
+		self.m_panel20.SetSizer( fgSizer7 )
+		self.m_panel20.Layout()
+		fgSizer7.Fit( self.m_panel20 )
+		self.m_auinotebook4.AddPage( self.m_panel20, u"Tambah data", False, wx.NullBitmap )
+		self.m_panel21 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer82 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_grid2 = wx.grid.Grid( self.m_panel21, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+
+		# Grid
+		self.m_grid2.CreateGrid( 5, 2 )
+		self.m_grid2.EnableEditing( True )
+		self.m_grid2.EnableGridLines( True )
+		self.m_grid2.EnableDragGridSize( False )
+		self.m_grid2.SetMargins( 0, 0 )
+
+		# Columns
+		self.m_grid2.EnableDragColMove( False )
+		self.m_grid2.EnableDragColSize( True )
+		self.m_grid2.SetColLabelSize( 30 )
+		self.m_grid2.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Rows
+		self.m_grid2.EnableDragRowSize( True )
+		self.m_grid2.SetRowLabelSize( 80 )
+		self.m_grid2.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Label Appearance
+
+		# Cell Defaults
+		self.m_grid2.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		bSizer82.Add( self.m_grid2, 0, wx.ALL, 5 )
+
+
+		self.m_panel21.SetSizer( bSizer82 )
+		self.m_panel21.Layout()
+		bSizer82.Fit( self.m_panel21 )
+		self.m_auinotebook4.AddPage( self.m_panel21, u"Jenis Makanan", False, wx.NullBitmap )
+		self.m_panel22 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer83 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_grid3 = wx.grid.Grid( self.m_panel22, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+
+		# Grid
+		self.m_grid3.CreateGrid( 5, 7 )
+		self.m_grid3.EnableEditing( True )
+		self.m_grid3.EnableGridLines( True )
+		self.m_grid3.EnableDragGridSize( False )
+		self.m_grid3.SetMargins( 0, 0 )
+
+		# Columns
+		self.m_grid3.EnableDragColMove( False )
+		self.m_grid3.EnableDragColSize( True )
+		self.m_grid3.SetColLabelSize( 30 )
+		self.m_grid3.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Rows
+		self.m_grid3.EnableDragRowSize( True )
+		self.m_grid3.SetRowLabelSize( 80 )
+		self.m_grid3.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+
+		# Label Appearance
+
+		# Cell Defaults
+		self.m_grid3.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		bSizer83.Add( self.m_grid3, 0, wx.ALL, 5 )
+
+
+		self.m_panel22.SetSizer( bSizer83 )
+		self.m_panel22.Layout()
+		bSizer83.Fit( self.m_panel22 )
+		self.m_auinotebook4.AddPage( self.m_panel22, u"Semua makanan", False, wx.NullBitmap )
+
+		bSizer79.Add( self.m_auinotebook4, 1, wx.EXPAND |wx.ALL, 5 )
+
+
+		self.SetSizer( bSizer79 )
+		self.Layout()
+
+		self.Centre( wx.BOTH )
+
+	def __del__( self ):
+		pass
+
+
+###########################################################################
+## Class LoginAdmin
+###########################################################################
+
+class LoginAdmin ( wx.Dialog ):
+
+	def __init__( self, parent ):
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.DefaultSize, style = wx.DEFAULT_DIALOG_STYLE )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+		fgSizer2 = wx.FlexGridSizer( 0, 2, 0, 0 )
+		fgSizer2.SetFlexibleDirection( wx.BOTH )
+		fgSizer2.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
+
+		self.m_staticText26 = wx.StaticText( self, wx.ID_ANY, u"Username", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText26.Wrap( -1 )
+
+		fgSizer2.Add( self.m_staticText26, 0, wx.ALL, 5 )
+
+		self.username1 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer2.Add( self.username1, 0, wx.ALL, 5 )
+
+		self.m_staticText27 = wx.StaticText( self, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText27.Wrap( -1 )
+
+		fgSizer2.Add( self.m_staticText27, 0, wx.ALL, 5 )
+
+		self.username = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer2.Add( self.username, 0, wx.ALL, 5 )
+
+
+		fgSizer2.Add( ( 0, 0), 1, wx.EXPAND, 5 )
+
+		self.btn_login = wx.Button( self, wx.ID_ANY, u"Login", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer2.Add( self.btn_login, 0, wx.ALL, 5 )
+
+
+		self.SetSizer( fgSizer2 )
+		self.Layout()
+		fgSizer2.Fit( self )
 
 		self.Centre( wx.BOTH )
 
