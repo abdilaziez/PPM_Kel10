@@ -80,7 +80,7 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer19 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_panel1 = wx.Panel( self.Kalkulator_Porsi_Makanan, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.m_panel1 = wx.Panel( self.Kalkulator_Porsi_Makanan, wx.ID_ANY, wx.Point( -1,-1 ), wx.Size( -1,30 ), wx.TAB_TRAVERSAL )
 		bSizer21 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_staticText16 = wx.StaticText( self.m_panel1, wx.ID_ANY, u"KALKULATOR PORSI MAKANAN", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
@@ -93,8 +93,7 @@ class FramePengguna ( wx.Frame ):
 
 		self.m_panel1.SetSizer( bSizer21 )
 		self.m_panel1.Layout()
-		bSizer21.Fit( self.m_panel1 )
-		bSizer19.Add( self.m_panel1, 1, wx.EXPAND |wx.ALL, 5 )
+		bSizer19.Add( self.m_panel1, 0, wx.EXPAND |wx.ALL, 5 )
 
 		self.m_panel2 = wx.Panel( self.Kalkulator_Porsi_Makanan, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer2 = wx.BoxSizer( wx.VERTICAL )
@@ -107,7 +106,7 @@ class FramePengguna ( wx.Frame ):
 		bSizer2.Add( self.m_staticText1, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 		m_choice3Choices = [ u"Buah", u"Sayuran" ]
-		self.m_choice3 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 500,50 ), m_choice3Choices, 0 )
+		self.m_choice3 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 300,50 ), m_choice3Choices, 0 )
 		self.m_choice3.SetSelection( 0 )
 		self.m_choice3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 		self.m_choice3.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
@@ -115,7 +114,7 @@ class FramePengguna ( wx.Frame ):
 		bSizer2.Add( self.m_choice3, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 		m_choice4Choices = [ u"Pisang (Sedang)" ]
-		self.m_choice4 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 500,-1 ), m_choice4Choices, 0 )
+		self.m_choice4 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 300,-1 ), m_choice4Choices, 0 )
 		self.m_choice4.SetSelection( 0 )
 		bSizer2.Add( self.m_choice4, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
@@ -166,13 +165,13 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer9 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button13 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button13 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer9.Add( self.m_button13, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_textCtrl1 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"2", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
 		bSizer9.Add( self.m_textCtrl1, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button14 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.Point( -1,-1 ), wx.DefaultSize, 0 )
+		self.m_button14 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.Point( -1,-1 ), wx.Size( 30,30 ), 0 )
 		bSizer9.Add( self.m_button14, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
@@ -180,13 +179,13 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer10 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button15 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button15 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer10.Add( self.m_button15, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 		self.m_textCtrl2 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"1", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
 		bSizer10.Add( self.m_textCtrl2, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button16 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button16 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer10.Add( self.m_button16, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
@@ -194,13 +193,13 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer11 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button17 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button17 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer11.Add( self.m_button17, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 		self.m_textCtrl3 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"3", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
 		bSizer11.Add( self.m_textCtrl3, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button18 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button18 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer11.Add( self.m_button18, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
@@ -208,13 +207,13 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer12 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button19 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button19 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer12.Add( self.m_button19, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 		self.m_textCtrl4 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"3", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
 		bSizer12.Add( self.m_textCtrl4, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button20 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button20 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer12.Add( self.m_button20, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
@@ -260,13 +259,13 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer24 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button22 = wx.Button( self.m_panel4, wx.ID_ANY, u"+", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button22 = wx.Button( self.m_panel4, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer24.Add( self.m_button22, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 		self.m_textCtrl6 = wx.TextCtrl( self.m_panel4, wx.ID_ANY, u"3", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
 		bSizer24.Add( self.m_textCtrl6, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button23 = wx.Button( self.m_panel4, wx.ID_ANY, u"-", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button23 = wx.Button( self.m_panel4, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer24.Add( self.m_button23, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
@@ -299,7 +298,8 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer20 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_panel7 = wx.Panel( self.Kalkulator_Porsi_Makanan, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.m_panel7 = wx.Panel( self.Kalkulator_Porsi_Makanan, wx.ID_ANY, wx.DefaultPosition, wx.Size( -1,-1 ), wx.TAB_TRAVERSAL )
+		self.m_panel7.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 		self.m_panel7.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_GRAYTEXT ) )
 
 		bSizer211 = wx.BoxSizer( wx.VERTICAL )
@@ -311,6 +311,8 @@ class FramePengguna ( wx.Frame ):
 
 		self.namaBuah = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Nama Buah", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.namaBuah.Wrap( -1 )
+
+		self.namaBuah.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		bSizer211.Add( self.namaBuah, 0, wx.ALL, 5 )
 
@@ -333,18 +335,18 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer25 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_staticText13 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Jumlah berat untuk sekali belanja", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText13.Wrap( -1 )
+		self.m_staticText131 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Jumlah berat untuk sekali belanja", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText131.Wrap( -1 )
 
-		bSizer25.Add( self.m_staticText13, 0, wx.ALL, 5 )
-
-		self.sekali_belanja = wx.StaticText( self.m_panel7, wx.ID_ANY, u"gram*2", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.sekali_belanja.Wrap( -1 )
-
-		bSizer25.Add( self.sekali_belanja, 0, wx.ALL, 5 )
+		bSizer25.Add( self.m_staticText131, 0, wx.ALL, 5 )
 
 
 		bSizer221.Add( bSizer25, 1, wx.EXPAND, 5 )
+
+		bSizer32 = wx.BoxSizer( wx.VERTICAL )
+
+
+		bSizer221.Add( bSizer32, 1, wx.EXPAND, 5 )
 
 
 		bSizer211.Add( bSizer221, 1, wx.EXPAND, 5 )
