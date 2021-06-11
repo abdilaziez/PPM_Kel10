@@ -707,7 +707,7 @@
                                                                 <property name="dock_fixed">0</property>
                                                                 <property name="docking">Left</property>
                                                                 <property name="enabled">1</property>
-                                                                <property name="fg">wxSYS_COLOUR_WINDOW</property>
+                                                                <property name="fg">wxSYS_COLOUR_BACKGROUND</property>
                                                                 <property name="floatable">1</property>
                                                                 <property name="font"></property>
                                                                 <property name="gripper">0</property>
@@ -762,7 +762,7 @@
                                                                 <property name="caption"></property>
                                                                 <property name="caption_visible">1</property>
                                                                 <property name="center_pane">0</property>
-                                                                <property name="choices">&quot;Pisang (Sedang)&quot;</property>
+                                                                <property name="choices">&quot;Pisang (Sedang)&quot; &quot;Pisang (Besar)&quot;</property>
                                                                 <property name="close_button">1</property>
                                                                 <property name="context_help"></property>
                                                                 <property name="context_menu">1</property>
@@ -771,7 +771,7 @@
                                                                 <property name="dock_fixed">0</property>
                                                                 <property name="docking">Left</property>
                                                                 <property name="enabled">1</property>
-                                                                <property name="fg"></property>
+                                                                <property name="fg">wxSYS_COLOUR_BACKGROUND</property>
                                                                 <property name="floatable">1</property>
                                                                 <property name="font"></property>
                                                                 <property name="gripper">0</property>
@@ -792,7 +792,7 @@
                                                                 <property name="pin_button">1</property>
                                                                 <property name="pos"></property>
                                                                 <property name="resize">Resizable</property>
-                                                                <property name="selection">0</property>
+                                                                <property name="selection">1</property>
                                                                 <property name="show">1</property>
                                                                 <property name="size">500,-1</property>
                                                                 <property name="style"></property>
@@ -1284,6 +1284,7 @@
                                                                                         <property name="window_extra_style"></property>
                                                                                         <property name="window_name"></property>
                                                                                         <property name="window_style"></property>
+                                                                                        <event name="OnButtonClick">nambahUkuran</event>
                                                                                     </object>
                                                                                 </object>
                                                                                 <object class="sizeritem" expanded="0">
@@ -1420,6 +1421,7 @@
                                                                                         <property name="window_extra_style"></property>
                                                                                         <property name="window_name"></property>
                                                                                         <property name="window_style"></property>
+                                                                                        <event name="OnButtonClick">kurangiUkuran</event>
                                                                                     </object>
                                                                                 </object>
                                                                             </object>
@@ -1503,6 +1505,7 @@
                                                                                         <property name="window_extra_style"></property>
                                                                                         <property name="window_name"></property>
                                                                                         <property name="window_style"></property>
+                                                                                        <event name="OnButtonClick">nambahUkuran</event>
                                                                                     </object>
                                                                                 </object>
                                                                                 <object class="sizeritem" expanded="0">
@@ -1639,6 +1642,7 @@
                                                                                         <property name="window_extra_style"></property>
                                                                                         <property name="window_name"></property>
                                                                                         <property name="window_style"></property>
+                                                                                        <event name="OnButtonClick">kurangiUkuran</event>
                                                                                     </object>
                                                                                 </object>
                                                                             </object>
@@ -1722,6 +1726,7 @@
                                                                                         <property name="window_extra_style"></property>
                                                                                         <property name="window_name"></property>
                                                                                         <property name="window_style"></property>
+                                                                                        <event name="OnButtonClick">nambahUkuran</event>
                                                                                     </object>
                                                                                 </object>
                                                                                 <object class="sizeritem" expanded="0">
@@ -1858,6 +1863,7 @@
                                                                                         <property name="window_extra_style"></property>
                                                                                         <property name="window_name"></property>
                                                                                         <property name="window_style"></property>
+                                                                                        <event name="OnButtonClick">kurangiUkuran</event>
                                                                                     </object>
                                                                                 </object>
                                                                             </object>
@@ -1941,6 +1947,7 @@
                                                                                         <property name="window_extra_style"></property>
                                                                                         <property name="window_name"></property>
                                                                                         <property name="window_style"></property>
+                                                                                        <event name="OnButtonClick">nambahUkuran</event>
                                                                                     </object>
                                                                                 </object>
                                                                                 <object class="sizeritem" expanded="0">
@@ -2077,6 +2084,7 @@
                                                                                         <property name="window_extra_style"></property>
                                                                                         <property name="window_name"></property>
                                                                                         <property name="window_style"></property>
+                                                                                        <event name="OnButtonClick">kurangiUkuran</event>
                                                                                     </object>
                                                                                 </object>
                                                                             </object>

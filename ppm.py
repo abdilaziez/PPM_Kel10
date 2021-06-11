@@ -109,14 +109,16 @@ class FramePengguna ( wx.Frame ):
 		m_choice3Choices = [ u"Buah", u"Sayuran" ]
 		self.m_choice3 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 500,50 ), m_choice3Choices, 0 )
 		self.m_choice3.SetSelection( 0 )
-		self.m_choice3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.m_choice3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BACKGROUND ) )
 		self.m_choice3.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		bSizer2.Add( self.m_choice3, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
-		m_choice4Choices = [ u"Pisang (Sedang)" ]
+		m_choice4Choices = [ u"Pisang (Sedang)", u"Pisang (Besar)" ]
 		self.m_choice4 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 500,-1 ), m_choice4Choices, 0 )
-		self.m_choice4.SetSelection( 0 )
+		self.m_choice4.SetSelection( 1 )
+		self.m_choice4.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BACKGROUND ) )
+
 		bSizer2.Add( self.m_choice4, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 
@@ -154,10 +156,10 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer6.Add( self.m_staticText11, 0, wx.ALL, 12 )
 
-		self.m_staticText13 = wx.StaticText( self.m_panel3, wx.ID_ANY, u"Anak - Anak (11 - 14 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText13.Wrap( -1 )
+		self.m_staticText131 = wx.StaticText( self.m_panel3, wx.ID_ANY, u"Anak - Anak (11 - 14 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText131.Wrap( -1 )
 
-		bSizer6.Add( self.m_staticText13, 0, wx.ALL, 12 )
+		bSizer6.Add( self.m_staticText131, 0, wx.ALL, 12 )
 
 
 		bSizer5.Add( bSizer6, 1, wx.EXPAND, 5 )
@@ -429,8 +431,32 @@ class FramePengguna ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
+		# Connect Events
+		self.m_button13.Bind( wx.EVT_BUTTON, self.nambahUkuran )
+		self.m_button14.Bind( wx.EVT_BUTTON, self.kurangiUkuran )
+		self.m_button15.Bind( wx.EVT_BUTTON, self.nambahUkuran )
+		self.m_button16.Bind( wx.EVT_BUTTON, self.kurangiUkuran )
+		self.m_button17.Bind( wx.EVT_BUTTON, self.nambahUkuran )
+		self.m_button18.Bind( wx.EVT_BUTTON, self.kurangiUkuran )
+		self.m_button19.Bind( wx.EVT_BUTTON, self.nambahUkuran )
+		self.m_button20.Bind( wx.EVT_BUTTON, self.kurangiUkuran )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def nambahUkuran( self, event ):
+		event.Skip()
+
+	def kurangiUkuran( self, event ):
+		event.Skip()
+
+
+
+
+
+
 
 
 ###########################################################################
@@ -552,7 +578,7 @@ class FrameAdmin ( wx.Frame ):
 		self.m_panel21.SetSizer( bSizer82 )
 		self.m_panel21.Layout()
 		bSizer82.Fit( self.m_panel21 )
-		self.m_auinotebook4.AddPage( self.m_panel21, u"Jenis Makanan", False, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel21, u"Jenis Makanan", True, wx.NullBitmap )
 		self.m_panel22 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer83 = wx.BoxSizer( wx.VERTICAL )
 
