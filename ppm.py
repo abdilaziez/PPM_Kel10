@@ -25,11 +25,19 @@ class Beranda ( wx.Frame ):
 
 		bSizer26 = wx.BoxSizer( wx.VERTICAL )
 
-		self.goFramePengguna = wx.Button( self, wx.ID_ANY, u"Pengguna", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer26.Add( self.goFramePengguna, 0, wx.ALL, 5 )
+		self.m_bitmap1 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"Gambar/PC.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( 150,150 ), 0 )
+		bSizer26.Add( self.m_bitmap1, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+		bSizer29 = wx.BoxSizer( wx.HORIZONTAL )
 
 		self.goFrameAdmin = wx.Button( self, wx.ID_ANY, u"Admin", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer26.Add( self.goFrameAdmin, 0, wx.ALL, 5 )
+		bSizer29.Add( self.goFrameAdmin, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+
+		self.goFramePengguna = wx.Button( self, wx.ID_ANY, u"Pengguna", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer29.Add( self.goFramePengguna, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+
+		bSizer26.Add( bSizer29, 1, wx.ALIGN_CENTER, 5 )
 
 
 		self.SetSizer( bSizer26 )
@@ -38,18 +46,18 @@ class Beranda ( wx.Frame ):
 		self.Centre( wx.BOTH )
 
 		# Connect Events
-		self.goFramePengguna.Bind( wx.EVT_BUTTON, self.OnButtonClickFramePengguna )
 		self.goFrameAdmin.Bind( wx.EVT_BUTTON, self.OnButtonClickFrameAdmin )
+		self.goFramePengguna.Bind( wx.EVT_BUTTON, self.OnButtonClickFramePengguna )
 
 	def __del__( self ):
 		pass
 
 
 	# Virtual event handlers, overide them in your derived class
-	def OnButtonClickFramePengguna( self, event ):
+	def OnButtonClickFrameAdmin( self, event ):
 		event.Skip()
 
-	def OnButtonClickFrameAdmin( self, event ):
+	def OnButtonClickFramePengguna( self, event ):
 		event.Skip()
 
 
