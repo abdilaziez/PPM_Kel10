@@ -29,6 +29,7 @@ class MyFrameAdmin(ppm.FrameAdmin):
 
     def OnButtonClickSimpan( self, event ):
         jenisMakanan = self.tabelJenisMakanan.getJenisMakananByNama("Buah")
+        print(jenisMakanan)
         # self.in_jenisMakanan.GetValue
         # self.in_namaMakanan.GetValue
 

@@ -13,13 +13,9 @@ class JenisMakanan:
         except mysql.connector.Error as e:
             self.error = "Failed connect to database in MySQL: {}".format(e)
 
-    def getJenisMakananByNama(self, namaMakanan):
-        value = (namaMakanan.capitalize())
-        query = "SELECT * FROM jenis_makanan WHERE nama_jenis_makanan= " + value
-        print(value)
+    def getIdJenisMakananByNama(self, namaMakanan):
+        value = namaMakanan.capitalize()
+        query = "SELECT ID_jenis_makanan FROM jenis_makanan WHERE nama_jenis_makanan='"+ value + "'"
         self.cursor.execute(query)
         data = self.cursor.fetchone()
-        print(data)
-
-coba = JenisMakanan()
-coba.getJenisMakananByNama("Buah")
+        return data[0]
