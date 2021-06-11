@@ -466,7 +466,7 @@ class FramePengguna ( wx.Frame ):
 class FrameAdmin ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,350 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -544,7 +544,7 @@ class FrameAdmin ( wx.Frame ):
 		self.m_panel20.SetSizer( fgSizer7 )
 		self.m_panel20.Layout()
 		fgSizer7.Fit( self.m_panel20 )
-		self.m_auinotebook4.AddPage( self.m_panel20, u"Tambah data", False, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel20, u"Tambah data", True, wx.NullBitmap )
 		self.m_panel21 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer82 = wx.BoxSizer( wx.VERTICAL )
 
@@ -578,7 +578,7 @@ class FrameAdmin ( wx.Frame ):
 		self.m_panel21.SetSizer( bSizer82 )
 		self.m_panel21.Layout()
 		bSizer82.Fit( self.m_panel21 )
-		self.m_auinotebook4.AddPage( self.m_panel21, u"Jenis Makanan", True, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel21, u"Jenis Makanan", False, wx.NullBitmap )
 		self.m_panel22 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer83 = wx.BoxSizer( wx.VERTICAL )
 
