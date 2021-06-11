@@ -459,56 +459,56 @@ class FrameAdmin ( wx.Frame ):
 
 		fgSizer7.Add( self.m_staticText79, 0, wx.ALL, 5 )
 
-		self.m_textCtrl19 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl19, 0, wx.ALL, 5 )
+		self.in_jenisMakanan = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_jenisMakanan, 0, wx.ALL, 5 )
 
 		self.m_staticText80 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Nama Makanan", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText80.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText80, 0, wx.ALL, 5 )
 
-		self.m_textCtrl20 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl20, 0, wx.ALL, 5 )
+		self.in_namaMakanan = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_namaMakanan, 0, wx.ALL, 5 )
 
 		self.m_staticText81 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Dewasa", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText81.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText81, 0, wx.ALL, 5 )
 
-		self.m_textCtrl18 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl18, 0, wx.ALL, 5 )
+		self.in_massaDewasa = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_massaDewasa, 0, wx.ALL, 5 )
 
 		self.m_staticText82 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Bayi", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText82.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText82, 0, wx.ALL, 5 )
 
-		self.m_textCtrl21 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl21, 0, wx.ALL, 5 )
+		self.in_massaBayi = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_massaBayi, 0, wx.ALL, 5 )
 
 		self.m_staticText83 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Anak (1-2 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText83.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText83, 0, wx.ALL, 5 )
 
-		self.m_textCtrl22 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl22, 0, wx.ALL, 5 )
+		self.in_massaAnak1 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_massaAnak1, 0, wx.ALL, 5 )
 
 		self.m_staticText84 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Anak (4-10 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText84.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText84, 0, wx.ALL, 5 )
 
-		self.m_textCtrl23 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl23, 0, wx.ALL, 5 )
+		self.in_massaAnak4 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_massaAnak4, 0, wx.ALL, 5 )
 
 		self.m_staticText85 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Anak (11-18 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText85.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText85, 0, wx.ALL, 5 )
 
-		self.m_textCtrl24 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl24, 0, wx.ALL, 5 )
+		self.in_massaAnak11 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_massaAnak11, 0, wx.ALL, 5 )
 
 
 		fgSizer7.Add( ( 0, 0), 1, wx.EXPAND, 5 )

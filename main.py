@@ -1,6 +1,6 @@
 import ppm 
 import wx
-from Database import akunAdmin
+from Database import akunAdmin, jenisMakanan, Makanan
 
 class MyBeranda(ppm.Beranda):
     def __init__(self, parent):
@@ -25,6 +25,13 @@ class MyFrameAdmin(ppm.FrameAdmin):
     def __init__(self, parent):
         self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
         ppm.FrameAdmin.__init__(self, parent)
+        self.tabelJenisMakanan = jenisMakanan.JenisMakanan()
+
+    def OnButtonClickSimpan( self, event ):
+        jenisMakanan = self.tabelJenisMakanan.getJenisMakananByNama("Buah")
+        # self.in_jenisMakanan.GetValue
+        # self.in_namaMakanan.GetValue
+
 
 class MyLoginAdmin(ppm.LoginAdmin):
     def __init__(self, parent):
