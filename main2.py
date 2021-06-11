@@ -21,6 +21,9 @@ class MyFramePengguna(ppm.FramePengguna):
         self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
         ppm.FramePengguna.__init__(self, parent)
 
+    # def nambahUkuran(self, event):
+
+
 class MyFrameAdmin(ppm.FrameAdmin):
     def __init__(self, parent):
         self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
@@ -38,6 +41,8 @@ class MyLoginAdmin(ppm.LoginAdmin):
             event = MyFrameAdmin(parent=None)
             event.Show()
             self.Destroy()
+
+class MyLoginAdmin(ppm.LoginAdmin):
 
 app = wx.App()
 frame = MyBeranda(parent=None)
