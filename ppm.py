@@ -80,7 +80,7 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer19 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_panel1 = wx.Panel( self.Kalkulator_Porsi_Makanan, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.m_panel1 = wx.Panel( self.Kalkulator_Porsi_Makanan, wx.ID_ANY, wx.Point( -1,-1 ), wx.Size( -1,30 ), wx.TAB_TRAVERSAL )
 		bSizer21 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_staticText16 = wx.StaticText( self.m_panel1, wx.ID_ANY, u"KALKULATOR PORSI MAKANAN", wx.Point( -1,-1 ), wx.Size( -1,-1 ), 0 )
@@ -93,8 +93,7 @@ class FramePengguna ( wx.Frame ):
 
 		self.m_panel1.SetSizer( bSizer21 )
 		self.m_panel1.Layout()
-		bSizer21.Fit( self.m_panel1 )
-		bSizer19.Add( self.m_panel1, 1, wx.EXPAND |wx.ALL, 5 )
+		bSizer19.Add( self.m_panel1, 0, wx.EXPAND |wx.ALL, 5 )
 
 		self.m_panel2 = wx.Panel( self.Kalkulator_Porsi_Makanan, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer2 = wx.BoxSizer( wx.VERTICAL )
@@ -107,18 +106,16 @@ class FramePengguna ( wx.Frame ):
 		bSizer2.Add( self.m_staticText1, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 		m_choice3Choices = [ u"Buah", u"Sayuran" ]
-		self.m_choice3 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 500,50 ), m_choice3Choices, 0 )
+		self.m_choice3 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 300,50 ), m_choice3Choices, 0 )
 		self.m_choice3.SetSelection( 0 )
-		self.m_choice3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BACKGROUND ) )
+		self.m_choice3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 		self.m_choice3.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		bSizer2.Add( self.m_choice3, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
-		m_choice4Choices = [ u"Pisang (Sedang)", u"Pisang (Besar)" ]
-		self.m_choice4 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 500,-1 ), m_choice4Choices, 0 )
-		self.m_choice4.SetSelection( 1 )
-		self.m_choice4.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BACKGROUND ) )
-
+		m_choice4Choices = [ u"Pisang (Sedang)" ]
+		self.m_choice4 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 300,-1 ), m_choice4Choices, 0 )
+		self.m_choice4.SetSelection( 0 )
 		bSizer2.Add( self.m_choice4, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 
@@ -156,10 +153,10 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer6.Add( self.m_staticText11, 0, wx.ALL, 12 )
 
-		self.m_staticText131 = wx.StaticText( self.m_panel3, wx.ID_ANY, u"Anak - Anak (11 - 14 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText131.Wrap( -1 )
+		self.m_staticText13 = wx.StaticText( self.m_panel3, wx.ID_ANY, u"Anak - Anak (11 - 14 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText13.Wrap( -1 )
 
-		bSizer6.Add( self.m_staticText131, 0, wx.ALL, 12 )
+		bSizer6.Add( self.m_staticText13, 0, wx.ALL, 12 )
 
 
 		bSizer5.Add( bSizer6, 1, wx.EXPAND, 5 )
@@ -168,13 +165,13 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer9 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button13 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button13 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer9.Add( self.m_button13, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
 		self.m_textCtrl1 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"2", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
 		bSizer9.Add( self.m_textCtrl1, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button14 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.Point( -1,-1 ), wx.DefaultSize, 0 )
+		self.m_button14 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.Point( -1,-1 ), wx.Size( 30,30 ), 0 )
 		bSizer9.Add( self.m_button14, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
@@ -182,13 +179,13 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer10 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button15 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button15 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer10.Add( self.m_button15, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 		self.m_textCtrl2 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"1", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
 		bSizer10.Add( self.m_textCtrl2, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button16 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button16 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer10.Add( self.m_button16, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
@@ -196,13 +193,13 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer11 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button17 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button17 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer11.Add( self.m_button17, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 		self.m_textCtrl3 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"3", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
 		bSizer11.Add( self.m_textCtrl3, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button18 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button18 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer11.Add( self.m_button18, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
@@ -210,13 +207,13 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer12 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button19 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button19 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer12.Add( self.m_button19, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 		self.m_textCtrl4 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"3", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
 		bSizer12.Add( self.m_textCtrl4, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button20 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button20 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer12.Add( self.m_button20, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
@@ -262,13 +259,13 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer24 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button22 = wx.Button( self.m_panel4, wx.ID_ANY, u"+", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button22 = wx.Button( self.m_panel4, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer24.Add( self.m_button22, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 		self.m_textCtrl6 = wx.TextCtrl( self.m_panel4, wx.ID_ANY, u"3", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
 		bSizer24.Add( self.m_textCtrl6, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button23 = wx.Button( self.m_panel4, wx.ID_ANY, u"-", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button23 = wx.Button( self.m_panel4, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
 		bSizer24.Add( self.m_button23, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
@@ -301,7 +298,8 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer20 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_panel7 = wx.Panel( self.Kalkulator_Porsi_Makanan, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		self.m_panel7 = wx.Panel( self.Kalkulator_Porsi_Makanan, wx.ID_ANY, wx.DefaultPosition, wx.Size( -1,-1 ), wx.TAB_TRAVERSAL )
+		self.m_panel7.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 		self.m_panel7.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_GRAYTEXT ) )
 
 		bSizer211 = wx.BoxSizer( wx.VERTICAL )
@@ -313,6 +311,8 @@ class FramePengguna ( wx.Frame ):
 
 		self.namaBuah = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Nama Buah", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.namaBuah.Wrap( -1 )
+
+		self.namaBuah.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		bSizer211.Add( self.namaBuah, 0, wx.ALL, 5 )
 
@@ -335,18 +335,18 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer25 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_staticText13 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Jumlah berat untuk sekali belanja", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText13.Wrap( -1 )
+		self.m_staticText131 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Jumlah berat untuk sekali belanja", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText131.Wrap( -1 )
 
-		bSizer25.Add( self.m_staticText13, 0, wx.ALL, 5 )
-
-		self.sekali_belanja = wx.StaticText( self.m_panel7, wx.ID_ANY, u"gram*2", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.sekali_belanja.Wrap( -1 )
-
-		bSizer25.Add( self.sekali_belanja, 0, wx.ALL, 5 )
+		bSizer25.Add( self.m_staticText131, 0, wx.ALL, 5 )
 
 
 		bSizer221.Add( bSizer25, 1, wx.EXPAND, 5 )
+
+		bSizer32 = wx.BoxSizer( wx.VERTICAL )
+
+
+		bSizer221.Add( bSizer32, 1, wx.EXPAND, 5 )
 
 
 		bSizer211.Add( bSizer221, 1, wx.EXPAND, 5 )
@@ -431,32 +431,8 @@ class FramePengguna ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
-		# Connect Events
-		self.m_button13.Bind( wx.EVT_BUTTON, self.nambahUkuran )
-		self.m_button14.Bind( wx.EVT_BUTTON, self.kurangiUkuran )
-		self.m_button15.Bind( wx.EVT_BUTTON, self.nambahUkuran )
-		self.m_button16.Bind( wx.EVT_BUTTON, self.kurangiUkuran )
-		self.m_button17.Bind( wx.EVT_BUTTON, self.nambahUkuran )
-		self.m_button18.Bind( wx.EVT_BUTTON, self.kurangiUkuran )
-		self.m_button19.Bind( wx.EVT_BUTTON, self.nambahUkuran )
-		self.m_button20.Bind( wx.EVT_BUTTON, self.kurangiUkuran )
-
 	def __del__( self ):
 		pass
-
-
-	# Virtual event handlers, overide them in your derived class
-	def nambahUkuran( self, event ):
-		event.Skip()
-
-	def kurangiUkuran( self, event ):
-		event.Skip()
-
-
-
-
-
-
 
 
 ###########################################################################
@@ -466,7 +442,7 @@ class FramePengguna ( wx.Frame ):
 class FrameAdmin ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,350 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -544,7 +520,7 @@ class FrameAdmin ( wx.Frame ):
 		self.m_panel20.SetSizer( fgSizer7 )
 		self.m_panel20.Layout()
 		fgSizer7.Fit( self.m_panel20 )
-		self.m_auinotebook4.AddPage( self.m_panel20, u"Tambah data", True, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel20, u"Tambah data", False, wx.NullBitmap )
 		self.m_panel21 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer82 = wx.BoxSizer( wx.VERTICAL )
 
@@ -612,7 +588,7 @@ class FrameAdmin ( wx.Frame ):
 		self.m_panel22.SetSizer( bSizer83 )
 		self.m_panel22.Layout()
 		bSizer83.Fit( self.m_panel22 )
-		self.m_auinotebook4.AddPage( self.m_panel22, u"Semua makanan", False, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel22, u"Semua makanan", True, wx.NullBitmap )
 
 		bSizer79.Add( self.m_auinotebook4, 1, wx.EXPAND |wx.ALL, 5 )
 
@@ -622,16 +598,8 @@ class FrameAdmin ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
-		# Connect Events
-		self.btn_simpan.Bind( wx.EVT_BUTTON, self.OnButtonClickSimpan )
-
 	def __del__( self ):
 		pass
-
-
-	# Virtual event handlers, overide them in your derived class
-	def OnButtonClickSimpan( self, event ):
-		event.Skip()
 
 
 ###########################################################################
@@ -641,7 +609,7 @@ class FrameAdmin ( wx.Frame ):
 class LoginAdmin ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.DefaultSize, style = wx.DEFAULT_DIALOG_STYLE )
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 250,300 ), style = wx.DEFAULT_DIALOG_STYLE )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -649,32 +617,54 @@ class LoginAdmin ( wx.Dialog ):
 		fgSizer2.SetFlexibleDirection( wx.BOTH )
 		fgSizer2.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 
+		bSizer33 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_bitmap6 = wx.StaticBitmap( self, wx.ID_ANY, wx.Bitmap( u"Gambar/PC.png", wx.BITMAP_TYPE_ANY ), wx.DefaultPosition, wx.Size( 150,150 ), 0 )
+		bSizer33.Add( self.m_bitmap6, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+		bSizer36 = wx.BoxSizer( wx.HORIZONTAL )
+
+		bSizer34 = wx.BoxSizer( wx.VERTICAL )
+
 		self.m_staticText26 = wx.StaticText( self, wx.ID_ANY, u"Username", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText26.Wrap( -1 )
 
-		fgSizer2.Add( self.m_staticText26, 0, wx.ALL, 5 )
+		bSizer34.Add( self.m_staticText26, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 		self.username = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer2.Add( self.username, 0, wx.ALL, 5 )
+		bSizer34.Add( self.username, 0, wx.ALL, 5 )
+
+
+		bSizer36.Add( bSizer34, 1, wx.EXPAND, 5 )
+
+		bSizer35 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_staticText27 = wx.StaticText( self, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText27.Wrap( -1 )
 
-		fgSizer2.Add( self.m_staticText27, 0, wx.ALL, 5 )
+		bSizer35.Add( self.m_staticText27, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 		self.password = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer2.Add( self.password, 0, wx.ALL, 5 )
+		bSizer35.Add( self.password, 0, wx.ALL, 5 )
+
+
+		bSizer36.Add( bSizer35, 1, wx.EXPAND, 5 )
+
+
+		bSizer33.Add( bSizer36, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+
+
+		fgSizer2.Add( bSizer33, 1, wx.ALIGN_CENTER, 5 )
 
 
 		fgSizer2.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 
 		self.btn_login = wx.Button( self, wx.ID_ANY, u"Login", wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer2.Add( self.btn_login, 0, wx.ALL, 5 )
+		fgSizer2.Add( self.btn_login, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 
 		self.SetSizer( fgSizer2 )
 		self.Layout()
-		fgSizer2.Fit( self )
 
 		self.Centre( wx.BOTH )
 
