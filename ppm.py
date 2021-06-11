@@ -68,7 +68,7 @@ class Beranda ( wx.Frame ):
 class FramePengguna ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 914,731 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 1100,731 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -105,18 +105,18 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer2.Add( self.m_staticText1, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
-		m_choice3Choices = [ u"Buah", u"Sayuran" ]
-		self.m_choice3 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 300,50 ), m_choice3Choices, 0 )
-		self.m_choice3.SetSelection( 0 )
-		self.m_choice3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
-		self.m_choice3.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		choice_jenis_makananChoices = [ u"Buah", u"Sayuran" ]
+		self.choice_jenis_makanan = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 300,50 ), choice_jenis_makananChoices, 0 )
+		self.choice_jenis_makanan.SetSelection( 0 )
+		self.choice_jenis_makanan.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.choice_jenis_makanan.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
-		bSizer2.Add( self.m_choice3, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+		bSizer2.Add( self.choice_jenis_makanan, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
-		m_choice4Choices = [ u"Pisang (Sedang)" ]
-		self.m_choice4 = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 300,-1 ), m_choice4Choices, 0 )
-		self.m_choice4.SetSelection( 0 )
-		bSizer2.Add( self.m_choice4, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
+		choice_makananChoices = [ u"Pisang (Sedang)" ]
+		self.choice_makanan = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 300,-1 ), choice_makananChoices, 0 )
+		self.choice_makanan.SetSelection( 0 )
+		bSizer2.Add( self.choice_makanan, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 
 		self.m_panel2.SetSizer( bSizer2 )
@@ -335,7 +335,7 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer25 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_staticText131 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Jumlah berat untuk sekali belanja", wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
+		self.m_staticText131 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Jumlah berat untuk sekali belanja", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
 		self.m_staticText131.Wrap( -1 )
 
 		bSizer25.Add( self.m_staticText131, 0, wx.ALL, 5 )
@@ -431,8 +431,16 @@ class FramePengguna ( wx.Frame ):
 
 		self.Centre( wx.BOTH )
 
+		# Connect Events
+		self.choice_jenis_makanan.Bind( wx.EVT_KILL_FOCUS, self.OnKillFocusJenisMakanan )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def OnKillFocusJenisMakanan( self, event ):
+		event.Skip()
 
 
 ###########################################################################
@@ -459,56 +467,48 @@ class FrameAdmin ( wx.Frame ):
 
 		fgSizer7.Add( self.m_staticText79, 0, wx.ALL, 5 )
 
-		self.m_textCtrl19 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl19, 0, wx.ALL, 5 )
+		self.in_jenisMakanan = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_jenisMakanan, 0, wx.ALL, 5 )
 
 		self.m_staticText80 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Nama Makanan", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText80.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText80, 0, wx.ALL, 5 )
 
-		self.m_textCtrl20 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl20, 0, wx.ALL, 5 )
+		self.in_namaMakanan = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_namaMakanan, 0, wx.ALL, 5 )
 
 		self.m_staticText81 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Dewasa", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText81.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText81, 0, wx.ALL, 5 )
 
-		self.m_textCtrl18 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl18, 0, wx.ALL, 5 )
+		self.in_massaDewasa = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_massaDewasa, 0, wx.ALL, 5 )
 
-		self.m_staticText82 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Bayi", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText82 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Bayi (1-2 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText82.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText82, 0, wx.ALL, 5 )
 
-		self.m_textCtrl21 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl21, 0, wx.ALL, 5 )
-
-		self.m_staticText83 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Anak (1-2 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText83.Wrap( -1 )
-
-		fgSizer7.Add( self.m_staticText83, 0, wx.ALL, 5 )
-
-		self.m_textCtrl22 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl22, 0, wx.ALL, 5 )
+		self.in_massaBayi = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_massaBayi, 0, wx.ALL, 5 )
 
 		self.m_staticText84 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Anak (4-10 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText84.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText84, 0, wx.ALL, 5 )
 
-		self.m_textCtrl23 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl23, 0, wx.ALL, 5 )
+		self.in_massaAnak4 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_massaAnak4, 0, wx.ALL, 5 )
 
 		self.m_staticText85 = wx.StaticText( self.m_panel20, wx.ID_ANY, u"Massa Anak (11-18 Tahun)", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText85.Wrap( -1 )
 
 		fgSizer7.Add( self.m_staticText85, 0, wx.ALL, 5 )
 
-		self.m_textCtrl24 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer7.Add( self.m_textCtrl24, 0, wx.ALL, 5 )
+		self.in_massaAnak11 = wx.TextCtrl( self.m_panel20, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer7.Add( self.in_massaAnak11, 0, wx.ALL, 5 )
 
 
 		fgSizer7.Add( ( 0, 0), 1, wx.EXPAND, 5 )
@@ -520,7 +520,7 @@ class FrameAdmin ( wx.Frame ):
 		self.m_panel20.SetSizer( fgSizer7 )
 		self.m_panel20.Layout()
 		fgSizer7.Fit( self.m_panel20 )
-		self.m_auinotebook4.AddPage( self.m_panel20, u"Tambah data", True, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel20, u"Tambah data", False, wx.NullBitmap )
 		self.m_panel21 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer82 = wx.BoxSizer( wx.VERTICAL )
 
@@ -588,7 +588,7 @@ class FrameAdmin ( wx.Frame ):
 		self.m_panel22.SetSizer( bSizer83 )
 		self.m_panel22.Layout()
 		bSizer83.Fit( self.m_panel22 )
-		self.m_auinotebook4.AddPage( self.m_panel22, u"Semua makanan", False, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel22, u"Semua makanan", True, wx.NullBitmap )
 
 		bSizer79.Add( self.m_auinotebook4, 1, wx.EXPAND |wx.ALL, 5 )
 
@@ -685,6 +685,46 @@ class LoginAdmin ( wx.Dialog ):
 
 	# Virtual event handlers, overide them in your derived class
 	def OnButtonClickLogin( self, event ):
+		event.Skip()
+
+
+###########################################################################
+## Class suksesTambah
+###########################################################################
+
+class suksesTambah ( wx.Dialog ):
+
+	def __init__( self, parent ):
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.DefaultSize, style = wx.DEFAULT_DIALOG_STYLE )
+
+		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+
+		bSizer35 = wx.BoxSizer( wx.VERTICAL )
+
+		self.m_staticText34 = wx.StaticText( self, wx.ID_ANY, u"Data Sukses di tambahkan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText34.Wrap( -1 )
+
+		bSizer35.Add( self.m_staticText34, 0, wx.ALL, 5 )
+
+		self.btn_suksesoke = wx.Button( self, wx.ID_ANY, u"Oke", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer35.Add( self.btn_suksesoke, 0, wx.ALL, 5 )
+
+
+		self.SetSizer( bSizer35 )
+		self.Layout()
+		bSizer35.Fit( self )
+
+		self.Centre( wx.BOTH )
+
+		# Connect Events
+		self.btn_suksesoke.Bind( wx.EVT_BUTTON, self.OnButtonClickSuksesOke )
+
+	def __del__( self ):
+		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def OnButtonClickSuksesOke( self, event ):
 		event.Skip()
 
 
