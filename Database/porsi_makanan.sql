@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jun 2021 pada 17.16
+-- Waktu pembuatan: 12 Jun 2021 pada 15.08
 -- Versi server: 10.4.16-MariaDB
 -- Versi PHP: 7.4.12
 
@@ -71,23 +71,19 @@ CREATE TABLE `makanan` (
   `massa_dewasa` varchar(10) NOT NULL,
   `massa_bayi` varchar(10) NOT NULL,
   `massa_anak_4_10_tahun` varchar(10) NOT NULL,
-  `massa_anak_11_18_tahun` varchar(10) NOT NULL,
-  `sendok_dewasa` varchar(75) NOT NULL,
-  `sendok_bayi` varchar(75) NOT NULL,
-  `sendok_anak_4_10_tahun` varchar(75) NOT NULL,
-  `sendok_anak_11_18_tahun` varchar(75) NOT NULL
+  `massa_anak_11_18_tahun` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `makanan`
 --
 
-INSERT INTO `makanan` (`ID_makanan`, `nama_makanan`, `tipe_makanan`, `massa_dewasa`, `massa_bayi`, `massa_anak_4_10_tahun`, `massa_anak_11_18_tahun`, `sendok_dewasa`, `sendok_bayi`, `sendok_anak_4_10_tahun`, `sendok_anak_11_18_tahun`) VALUES
-(1, 'Apel (tidak dikupas)', 1, '150gr', 'Dilarang', '87,5gr', '125gr', '', '', '', ''),
-(2, 'Aprikot (kering)', 1, '30gr', 'Dilarang', '22,5gr', '27,5gr', '', '', '', ''),
-(3, 'Aprikot (Segar)', 1, '100gr', 'Dilarang', '75gr', '90gr', '', '', '', ''),
-(4, 'Pisang (Tidak dikupas)', 1, '150gr', 'Dilarang', '87,5gr', '125gr', '', '', '', ''),
-(5, 'Blueberry', 1, '80gr', 'Dilarang', '50gr', '80gr', '', '', '', '');
+INSERT INTO `makanan` (`ID_makanan`, `nama_makanan`, `tipe_makanan`, `massa_dewasa`, `massa_bayi`, `massa_anak_4_10_tahun`, `massa_anak_11_18_tahun`) VALUES
+(1, 'Apel (tidak dikupas)', 1, '150gr', 'Dilarang', '87,5gr', '125gr'),
+(2, 'Aprikot (kering)', 1, '30gr', 'Dilarang', '22,5gr', '27,5gr'),
+(3, 'Aprikot (Segar)', 1, '100gr', 'Dilarang', '75gr', '90gr'),
+(4, 'Pisang (Tidak dikupas)', 1, '150gr', 'Dilarang', '87,5gr', '125gr'),
+(5, 'Blueberry', 1, '80gr', 'Dilarang', '50gr', '80gr');
 
 --
 -- Indexes for dumped tables
