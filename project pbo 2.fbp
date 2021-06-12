@@ -4675,7 +4675,7 @@
                         <object class="auinotebookpage" expanded="0">
                             <property name="bitmap"></property>
                             <property name="label">Jenis Makanan</property>
-                            <property name="select">1</property>
+                            <property name="select">0</property>
                             <object class="wxPanel" expanded="0">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
@@ -4760,10 +4760,10 @@
                                             <property name="close_button">1</property>
                                             <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                             <property name="col_label_size">30</property>
-                                            <property name="col_label_values"></property>
+                                            <property name="col_label_values">&quot;ID Jenis Makanan&quot; &quot;Nama Jenis Makanan&quot; &quot;&quot;</property>
                                             <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                             <property name="cols">2</property>
-                                            <property name="column_sizes"></property>
+                                            <property name="column_sizes">142,129</property>
                                             <property name="context_help"></property>
                                             <property name="context_menu">1</property>
                                             <property name="default_pane">0</property>
@@ -4794,7 +4794,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">-1,1000</property>
+                                            <property name="minimum_size">1000,1000</property>
                                             <property name="moveable">1</property>
                                             <property name="name">listJenisMakanan</property>
                                             <property name="pane_border">1</property>
@@ -4826,7 +4826,7 @@
                         <object class="auinotebookpage" expanded="0">
                             <property name="bitmap"></property>
                             <property name="label">Semua makanan</property>
-                            <property name="select">0</property>
+                            <property name="select">1</property>
                             <object class="wxPanel" expanded="0">
                                 <property name="BottomDockable">1</property>
                                 <property name="LeftDockable">1</property>
@@ -4911,10 +4911,10 @@
                                             <property name="close_button">1</property>
                                             <property name="col_label_horiz_alignment">wxALIGN_CENTER</property>
                                             <property name="col_label_size">30</property>
-                                            <property name="col_label_values"></property>
+                                            <property name="col_label_values">&quot;ID Makanan&quot; &quot;Nama Makanan&quot; &quot;Tipe Makanan&quot; &quot;Massa Dewasa&quot; &quot;Massa bayi&quot; &quot;Massa Anak 4-8 Tahun&quot; &quot;Massa Anak 11-18 Tahun&quot; &quot;&quot; &quot;&quot; &quot;&quot;</property>
                                             <property name="col_label_vert_alignment">wxALIGN_CENTER</property>
                                             <property name="cols">7</property>
-                                            <property name="column_sizes"></property>
+                                            <property name="column_sizes">122,126,103,112,80,135,146</property>
                                             <property name="context_help"></property>
                                             <property name="context_menu">1</property>
                                             <property name="default_pane">0</property>

@@ -576,9 +576,14 @@ class FrameAdmin ( wx.Frame ):
 		self.listJenisMakanan.SetMargins( 0, 0 )
 
 		# Columns
+		self.listJenisMakanan.SetColSize( 0, 142 )
+		self.listJenisMakanan.SetColSize( 1, 129 )
 		self.listJenisMakanan.EnableDragColMove( False )
 		self.listJenisMakanan.EnableDragColSize( True )
 		self.listJenisMakanan.SetColLabelSize( 30 )
+		self.listJenisMakanan.SetColLabelValue( 0, u"ID Jenis Makanan" )
+		self.listJenisMakanan.SetColLabelValue( 1, u"Nama Jenis Makanan" )
+		self.listJenisMakanan.SetColLabelValue( 2, wx.EmptyString )
 		self.listJenisMakanan.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
@@ -590,7 +595,7 @@ class FrameAdmin ( wx.Frame ):
 
 		# Cell Defaults
 		self.listJenisMakanan.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
-		self.listJenisMakanan.SetMinSize( wx.Size( -1,1000 ) )
+		self.listJenisMakanan.SetMinSize( wx.Size( 1000,1000 ) )
 
 		bSizer82.Add( self.listJenisMakanan, 0, wx.ALL, 5 )
 
@@ -598,7 +603,7 @@ class FrameAdmin ( wx.Frame ):
 		self.m_panel21.SetSizer( bSizer82 )
 		self.m_panel21.Layout()
 		bSizer82.Fit( self.m_panel21 )
-		self.m_auinotebook4.AddPage( self.m_panel21, u"Jenis Makanan", True, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel21, u"Jenis Makanan", False, wx.NullBitmap )
 		self.m_panel22 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer83 = wx.BoxSizer( wx.VERTICAL )
 
@@ -612,9 +617,26 @@ class FrameAdmin ( wx.Frame ):
 		self.listMakanan.SetMargins( 0, 0 )
 
 		# Columns
+		self.listMakanan.SetColSize( 0, 122 )
+		self.listMakanan.SetColSize( 1, 126 )
+		self.listMakanan.SetColSize( 2, 103 )
+		self.listMakanan.SetColSize( 3, 112 )
+		self.listMakanan.SetColSize( 4, 80 )
+		self.listMakanan.SetColSize( 5, 135 )
+		self.listMakanan.SetColSize( 6, 146 )
 		self.listMakanan.EnableDragColMove( False )
 		self.listMakanan.EnableDragColSize( True )
 		self.listMakanan.SetColLabelSize( 30 )
+		self.listMakanan.SetColLabelValue( 0, u"ID Makanan" )
+		self.listMakanan.SetColLabelValue( 1, u"Nama Makanan" )
+		self.listMakanan.SetColLabelValue( 2, u"Tipe Makanan" )
+		self.listMakanan.SetColLabelValue( 3, u"Massa Dewasa" )
+		self.listMakanan.SetColLabelValue( 4, u"Massa bayi" )
+		self.listMakanan.SetColLabelValue( 5, u"Massa Anak 4-8 Tahun" )
+		self.listMakanan.SetColLabelValue( 6, u"Massa Anak 11-18 Tahun" )
+		self.listMakanan.SetColLabelValue( 7, wx.EmptyString )
+		self.listMakanan.SetColLabelValue( 8, wx.EmptyString )
+		self.listMakanan.SetColLabelValue( 9, wx.EmptyString )
 		self.listMakanan.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
@@ -634,7 +656,7 @@ class FrameAdmin ( wx.Frame ):
 		self.m_panel22.SetSizer( bSizer83 )
 		self.m_panel22.Layout()
 		bSizer83.Fit( self.m_panel22 )
-		self.m_auinotebook4.AddPage( self.m_panel22, u"Semua makanan", False, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel22, u"Semua makanan", True, wx.NullBitmap )
 
 		bSizer79.Add( self.m_auinotebook4, 1, wx.EXPAND |wx.ALL, 5 )
 
