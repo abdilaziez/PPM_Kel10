@@ -105,19 +105,24 @@ class MyFrameAdmin(ppm.FrameAdmin):
         
         
         dataJenisMakanan = self.tabelJenisMakanan.getJenisMakanan()
-        self.listJenisMakanan.AppendRows(1)
+        self.listJenisMakanan.AppendRows(len(dataJenisMakanan))
         for column in range (len(dataJenisMakanan[0])):
             row = 0
             for item in dataJenisMakanan:
                 self.listJenisMakanan.SetCellValue(row, column, str(item[column]))
                 row += 1
+        self.listJenisMakanan.AutoSizeColumns()
+        self.listJenisMakanan.AutoSizeRows()
 
         dataMakanan = self.tabelMakanan.getMakanan()
+        self.listMakanan.AppendRows(len(dataMakanan))
         for column in range (len(dataMakanan[0])):
             row = 0
             for item in dataMakanan:
                 self.listMakanan.SetCellValue(row, column, str(item[column]))
                 row += 1
+        self.listMakanan.AutoSizeColumns()
+        self.listMakanan.AutoSizeRows()
 
     def OnButtonClickSimpan( self, event ):
         jenisMakanan = self.tabelJenisMakanan.getIdJenisMakananByNama(self.in_jenisMakanan.GetValue())

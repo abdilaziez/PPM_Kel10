@@ -569,7 +569,7 @@ class FrameAdmin ( wx.Frame ):
 		self.listJenisMakanan = wx.grid.Grid( self.m_panel21, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.listJenisMakanan.CreateGrid( 10, 2 )
+		self.listJenisMakanan.CreateGrid( 0, 2 )
 		self.listJenisMakanan.EnableEditing( True )
 		self.listJenisMakanan.EnableGridLines( True )
 		self.listJenisMakanan.EnableDragGridSize( False )
@@ -590,6 +590,8 @@ class FrameAdmin ( wx.Frame ):
 
 		# Cell Defaults
 		self.listJenisMakanan.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		self.listJenisMakanan.SetMinSize( wx.Size( -1,1000 ) )
+
 		bSizer82.Add( self.listJenisMakanan, 0, wx.ALL, 5 )
 
 
@@ -603,7 +605,7 @@ class FrameAdmin ( wx.Frame ):
 		self.listMakanan = wx.grid.Grid( self.m_panel22, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.listMakanan.CreateGrid( 20, 7 )
+		self.listMakanan.CreateGrid( 0, 7 )
 		self.listMakanan.EnableEditing( True )
 		self.listMakanan.EnableGridLines( True )
 		self.listMakanan.EnableDragGridSize( False )
@@ -624,6 +626,8 @@ class FrameAdmin ( wx.Frame ):
 
 		# Cell Defaults
 		self.listMakanan.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		self.listMakanan.SetMinSize( wx.Size( -1,1000 ) )
+
 		bSizer83.Add( self.listMakanan, 0, wx.ALL, 5 )
 
 
