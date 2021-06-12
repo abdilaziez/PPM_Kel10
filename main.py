@@ -102,6 +102,22 @@ class MyFrameAdmin(ppm.FrameAdmin):
         ppm.FrameAdmin.__init__(self, parent)
         self.tabelJenisMakanan = jenisMakanan.JenisMakanan()
         self.tabelMakanan = Makanan.Makanan()
+        
+        
+        dataJenisMakanan = self.tabelJenisMakanan.getJenisMakanan()
+        self.listJenisMakanan.AppendRows(1)
+        for column in range (len(dataJenisMakanan[0])):
+            row = 0
+            for item in dataJenisMakanan:
+                self.listJenisMakanan.SetCellValue(row, column, str(item[column]))
+                row += 1
+
+        dataMakanan = self.tabelMakanan.getMakanan()
+        for column in range (len(dataMakanan[0])):
+            row = 0
+            for item in dataMakanan:
+                self.listMakanan.SetCellValue(row, column, str(item[column]))
+                row += 1
 
     def OnButtonClickSimpan( self, event ):
         jenisMakanan = self.tabelJenisMakanan.getIdJenisMakananByNama(self.in_jenisMakanan.GetValue())

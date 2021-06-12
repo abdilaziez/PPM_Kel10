@@ -24,3 +24,7 @@ class Makanan:
         self.cursor.execute(query)
         return self.cursor.fetchall()
     
+    def getMakanan(self):
+        query = "SELECT * FROM makanan "
+        self.cursor.execute(query)
+        return self.cursor.fetchall()

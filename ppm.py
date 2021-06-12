@@ -566,71 +566,71 @@ class FrameAdmin ( wx.Frame ):
 		self.m_panel21 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer82 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_grid2 = wx.grid.Grid( self.m_panel21, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.listJenisMakanan = wx.grid.Grid( self.m_panel21, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid2.CreateGrid( 5, 2 )
-		self.m_grid2.EnableEditing( True )
-		self.m_grid2.EnableGridLines( True )
-		self.m_grid2.EnableDragGridSize( False )
-		self.m_grid2.SetMargins( 0, 0 )
+		self.listJenisMakanan.CreateGrid( 10, 2 )
+		self.listJenisMakanan.EnableEditing( True )
+		self.listJenisMakanan.EnableGridLines( True )
+		self.listJenisMakanan.EnableDragGridSize( False )
+		self.listJenisMakanan.SetMargins( 0, 0 )
 
 		# Columns
-		self.m_grid2.EnableDragColMove( False )
-		self.m_grid2.EnableDragColSize( True )
-		self.m_grid2.SetColLabelSize( 30 )
-		self.m_grid2.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+		self.listJenisMakanan.EnableDragColMove( False )
+		self.listJenisMakanan.EnableDragColSize( True )
+		self.listJenisMakanan.SetColLabelSize( 30 )
+		self.listJenisMakanan.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
-		self.m_grid2.EnableDragRowSize( True )
-		self.m_grid2.SetRowLabelSize( 80 )
-		self.m_grid2.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+		self.listJenisMakanan.EnableDragRowSize( True )
+		self.listJenisMakanan.SetRowLabelSize( 80 )
+		self.listJenisMakanan.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Label Appearance
 
 		# Cell Defaults
-		self.m_grid2.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
-		bSizer82.Add( self.m_grid2, 0, wx.ALL, 5 )
+		self.listJenisMakanan.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		bSizer82.Add( self.listJenisMakanan, 0, wx.ALL, 5 )
 
 
 		self.m_panel21.SetSizer( bSizer82 )
 		self.m_panel21.Layout()
 		bSizer82.Fit( self.m_panel21 )
-		self.m_auinotebook4.AddPage( self.m_panel21, u"Jenis Makanan", False, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel21, u"Jenis Makanan", True, wx.NullBitmap )
 		self.m_panel22 = wx.Panel( self.m_auinotebook4, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer83 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_grid3 = wx.grid.Grid( self.m_panel22, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.listMakanan = wx.grid.Grid( self.m_panel22, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid3.CreateGrid( 5, 7 )
-		self.m_grid3.EnableEditing( True )
-		self.m_grid3.EnableGridLines( True )
-		self.m_grid3.EnableDragGridSize( False )
-		self.m_grid3.SetMargins( 0, 0 )
+		self.listMakanan.CreateGrid( 20, 7 )
+		self.listMakanan.EnableEditing( True )
+		self.listMakanan.EnableGridLines( True )
+		self.listMakanan.EnableDragGridSize( False )
+		self.listMakanan.SetMargins( 0, 0 )
 
 		# Columns
-		self.m_grid3.EnableDragColMove( False )
-		self.m_grid3.EnableDragColSize( True )
-		self.m_grid3.SetColLabelSize( 30 )
-		self.m_grid3.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+		self.listMakanan.EnableDragColMove( False )
+		self.listMakanan.EnableDragColSize( True )
+		self.listMakanan.SetColLabelSize( 30 )
+		self.listMakanan.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
-		self.m_grid3.EnableDragRowSize( True )
-		self.m_grid3.SetRowLabelSize( 80 )
-		self.m_grid3.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
+		self.listMakanan.EnableDragRowSize( True )
+		self.listMakanan.SetRowLabelSize( 80 )
+		self.listMakanan.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Label Appearance
 
 		# Cell Defaults
-		self.m_grid3.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
-		bSizer83.Add( self.m_grid3, 0, wx.ALL, 5 )
+		self.listMakanan.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
+		bSizer83.Add( self.listMakanan, 0, wx.ALL, 5 )
 
 
 		self.m_panel22.SetSizer( bSizer83 )
 		self.m_panel22.Layout()
 		bSizer83.Fit( self.m_panel22 )
-		self.m_auinotebook4.AddPage( self.m_panel22, u"Semua makanan", True, wx.NullBitmap )
+		self.m_auinotebook4.AddPage( self.m_panel22, u"Semua makanan", False, wx.NullBitmap )
 
 		bSizer79.Add( self.m_auinotebook4, 1, wx.EXPAND |wx.ALL, 5 )
 
