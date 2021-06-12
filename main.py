@@ -41,7 +41,6 @@ class MyFramePengguna(ppm.FramePengguna):
     def nambahUkuran1(self, event):
         self.Angka1 += 1
         self.kotakHasil1.SetValue(str(self.Angka1))
-        
     
     def nambahUkuran2(self, event):
         self.Angka2 += 1
@@ -96,6 +95,47 @@ class MyFramePengguna(ppm.FramePengguna):
         for item in dataMakanan:
             self.choice_makanan.Append(item[1])
 
+    def OnButtonClickHitung(self, event):
+        dataMakanan = self.tabelMakanan.getMakananByNama(self.choice_makanan.GetString(self.choice_makanan.GetSelection()))
+        dataMakanan[2] = self.tabelJenisMakanan.getNamaJenisMakananById(dataMakanan[2])
+        for row in range(3, len(dataMakanan)):
+            try:
+                dataMakanan[row] = dataMakanan[row].replace("gr", "")
+                dataMakanan[row] = dataMakanan[row].replace(",", ".")
+            except:
+                gabut = "gabut"
+
+        porsiDewasa = self.ukuranMassa(dataMakanan[3], self.kotakHasil1.GetValue())
+        self.porsiDewasa.SetLabel(porsiDewasa)
+        porsiBayi = self.ukuranMassa(dataMakanan[4], self.kotakHasil2.GetValue())
+        self.porsiBayi.SetLabel(porsiBayi)
+        porsiAnak4 = self.ukuranMassa(dataMakanan[5], self.kotakHasil3.GetValue())
+        self.porsiAnak4.SetLabel(porsiAnak4)
+        porsiAnak11 = self.ukuranMassa(dataMakanan[6], self.kotakHasil4.GetValue())
+        self.porsiAnak11.SetLabel(porsiAnak11)
+
+        hitungSekaliMasak = self.sekaliMasak([porsiDewasa, porsiBayi, porsiAnak4, porsiAnak11])
+        self.sekali_masak.SetLabel(hitungSekaliMasak)
+
+        self.sekali_belanja.SetLabel(str(float(hitungSekaliMasak.replace("g", ""))*int(self.kotakHasil5.GetValue())/1000)+"Kg")
+
+    def ukuranMassa(self, value, orang):
+        try:
+            result = float(value) * int(orang)
+        except:
+            result = value
+        return str(result)
+
+    def sekaliMasak(self, value):
+        result = 0
+        for i in value:
+            try:
+                result += float(i)
+            except:
+                wah="wah"
+        return str(result)+"g"
+
+
 class MyFrameAdmin(ppm.FrameAdmin):
     def __init__(self, parent):
         self.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
@@ -118,8 +158,12 @@ class MyFrameAdmin(ppm.FrameAdmin):
         self.listMakanan.AppendRows(len(dataMakanan))
         for column in range (len(dataMakanan[0])):
             row = 0
-            for item in dataMakanan:
-                self.listMakanan.SetCellValue(row, column, str(item[column]))
+            for item in range(len(dataMakanan)):
+                try:
+                    dataMakanan[item][2] = self.tabelJenisMakanan.getNamaJenisMakananById(dataMakanan[item][2])
+                except:
+                    gabut = "gabut"
+                self.listMakanan.SetCellValue(row, column, str(dataMakanan[item][column]))
                 row += 1
         self.listMakanan.AutoSizeColumns()
         self.listMakanan.AutoSizeRows()

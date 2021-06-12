@@ -35,3 +35,9 @@ class JenisMakanan:
         query = "SELECT * FROM jenis_makanan"
         self.cursor.execute(query)
         return self.cursor.fetchall()
+
+    def getNamaJenisMakananById(self, id):
+        query = "SELECT nama_jenis_makanan FROM jenis_makanan WHERE ID_jenis_makanan='"+ str(id) + "'"
+        self.cursor.execute(query)
+        data = self.cursor.fetchone()
+        return data[0]

@@ -327,7 +327,7 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer231.Add( self.m_staticText12, 0, wx.ALL, 5 )
 
-		self.sekali_masak = wx.StaticText( self.m_panel7, wx.ID_ANY, u"gram", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.sekali_masak = wx.StaticText( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.sekali_masak.Wrap( -1 )
 
 		bSizer231.Add( self.sekali_masak, 0, wx.ALL, 5 )
@@ -341,6 +341,11 @@ class FramePengguna ( wx.Frame ):
 		self.m_staticText131.Wrap( -1 )
 
 		bSizer25.Add( self.m_staticText131, 0, wx.ALL, 5 )
+
+		self.sekali_belanja = wx.StaticText( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.sekali_belanja.Wrap( -1 )
+
+		bSizer25.Add( self.sekali_belanja, 0, wx.ALL, 5 )
 
 
 		bSizer221.Add( bSizer25, 1, wx.EXPAND, 5 )
@@ -372,7 +377,7 @@ class FramePengguna ( wx.Frame ):
 
 		fgSizer1.Add( self.m_staticText18, 0, wx.ALL, 5 )
 
-		self.porsiDewasa = wx.StaticText( self.m_panel7, wx.ID_ANY, u"ouput", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.porsiDewasa = wx.StaticText( self.m_panel7, wx.ID_ANY, u"output", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.porsiDewasa.Wrap( -1 )
 
 		fgSizer1.Add( self.porsiDewasa, 0, wx.ALL, 5 )
@@ -445,6 +450,7 @@ class FramePengguna ( wx.Frame ):
 		self.Kurang4.Bind( wx.EVT_BUTTON, self.kurangiUkuran4 )
 		self.Tambah5.Bind( wx.EVT_BUTTON, self.nambahUkuran5 )
 		self.Kurang5.Bind( wx.EVT_BUTTON, self.kurangiUkuran5 )
+		self.m_button25.Bind( wx.EVT_BUTTON, self.OnButtonClickHitung )
 
 	def __del__( self ):
 		pass
@@ -482,6 +488,9 @@ class FramePengguna ( wx.Frame ):
 		event.Skip()
 
 	def kurangiUkuran5( self, event ):
+		event.Skip()
+
+	def OnButtonClickHitung( self, event ):
 		event.Skip()
 
 

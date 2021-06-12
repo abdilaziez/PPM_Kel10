@@ -27,4 +27,13 @@ class Makanan:
     def getMakanan(self):
         query = "SELECT * FROM makanan "
         self.cursor.execute(query)
-        return self.cursor.fetchall()
+        data = self.cursor.fetchall()
+        for index in range(len(data)):
+            data[index] = list(data[index])
+        return data
+
+
+    def getMakananByNama(self, namaMakanan):
+        query = "SELECT * FROM makanan WHERE nama_makanan='" + str(namaMakanan) + "'"
+        self.cursor.execute(query)
+        return list(self.cursor.fetchone())
