@@ -105,17 +105,19 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer2.Add( self.m_staticText1, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
-		choice_jenis_makananChoices = [ u"Buah", u"Sayuran" ]
+		choice_jenis_makananChoices = []
 		self.choice_jenis_makanan = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 300,50 ), choice_jenis_makananChoices, 0 )
 		self.choice_jenis_makanan.SetSelection( 0 )
-		self.choice_jenis_makanan.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.choice_jenis_makanan.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BACKGROUND ) )
 		self.choice_jenis_makanan.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
 
 		bSizer2.Add( self.choice_jenis_makanan, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
-		choice_makananChoices = [ u"Pisang (Sedang)" ]
+		choice_makananChoices = []
 		self.choice_makanan = wx.Choice( self.m_panel2, wx.ID_ANY, wx.DefaultPosition, wx.Size( 300,-1 ), choice_makananChoices, 0 )
 		self.choice_makanan.SetSelection( 0 )
+		self.choice_makanan.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BACKGROUND ) )
+
 		bSizer2.Add( self.choice_makanan, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
 
@@ -165,56 +167,56 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer9 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button13 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
-		bSizer9.Add( self.m_button13, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
+		self.Tambah1 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
+		bSizer9.Add( self.Tambah1, 0, wx.ALL|wx.ALIGN_CENTER_VERTICAL, 5 )
 
-		self.m_textCtrl1 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"2", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		bSizer9.Add( self.m_textCtrl1, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.kotakHasil1 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"0", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		bSizer9.Add( self.kotakHasil1, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button14 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.Point( -1,-1 ), wx.Size( 30,30 ), 0 )
-		bSizer9.Add( self.m_button14, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.Kurang1 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.Point( -1,-1 ), wx.Size( 30,30 ), 0 )
+		bSizer9.Add( self.Kurang1, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
 		bSizer8.Add( bSizer9, 1, wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		bSizer10 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button15 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
-		bSizer10.Add( self.m_button15, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.Tambah2 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
+		bSizer10.Add( self.Tambah2, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_textCtrl2 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"1", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		bSizer10.Add( self.m_textCtrl2, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.kotakHasil2 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"0", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		bSizer10.Add( self.kotakHasil2, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button16 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
-		bSizer10.Add( self.m_button16, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.Kurang2 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
+		bSizer10.Add( self.Kurang2, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
 		bSizer8.Add( bSizer10, 1, wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		bSizer11 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button17 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
-		bSizer11.Add( self.m_button17, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.Tambah3 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
+		bSizer11.Add( self.Tambah3, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_textCtrl3 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"3", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		bSizer11.Add( self.m_textCtrl3, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.kotakHasil3 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"0", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		bSizer11.Add( self.kotakHasil3, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button18 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
-		bSizer11.Add( self.m_button18, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.Kurang3 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
+		bSizer11.Add( self.Kurang3, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
 		bSizer8.Add( bSizer11, 1, wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		bSizer12 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button19 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
-		bSizer12.Add( self.m_button19, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.Tambah4 = wx.Button( self.m_panel3, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
+		bSizer12.Add( self.Tambah4, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_textCtrl4 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"3", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		bSizer12.Add( self.m_textCtrl4, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.kotakHasil4 = wx.TextCtrl( self.m_panel3, wx.ID_ANY, u"0", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		bSizer12.Add( self.kotakHasil4, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button20 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
-		bSizer12.Add( self.m_button20, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.Kurang4 = wx.Button( self.m_panel3, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
+		bSizer12.Add( self.Kurang4, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
 		bSizer8.Add( bSizer12, 1, wx.ALIGN_CENTER_HORIZONTAL, 5 )
@@ -259,14 +261,14 @@ class FramePengguna ( wx.Frame ):
 
 		bSizer24 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button22 = wx.Button( self.m_panel4, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
-		bSizer24.Add( self.m_button22, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.Tambah5 = wx.Button( self.m_panel4, wx.ID_ANY, u"+", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
+		bSizer24.Add( self.Tambah5, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_textCtrl6 = wx.TextCtrl( self.m_panel4, wx.ID_ANY, u"3", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
-		bSizer24.Add( self.m_textCtrl6, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.kotakHasil5 = wx.TextCtrl( self.m_panel4, wx.ID_ANY, u"0", wx.DefaultPosition, wx.DefaultSize, wx.TE_CENTER )
+		bSizer24.Add( self.kotakHasil5, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
-		self.m_button23 = wx.Button( self.m_panel4, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
-		bSizer24.Add( self.m_button23, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
+		self.Kurang5 = wx.Button( self.m_panel4, wx.ID_ANY, u"-", wx.DefaultPosition, wx.Size( 30,30 ), 0 )
+		bSizer24.Add( self.Kurang5, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
 
 		bSizer22.Add( bSizer24, 1, wx.ALIGN_CENTER_HORIZONTAL, 5 )
@@ -433,6 +435,16 @@ class FramePengguna ( wx.Frame ):
 
 		# Connect Events
 		self.choice_jenis_makanan.Bind( wx.EVT_KILL_FOCUS, self.OnKillFocusJenisMakanan )
+		self.Tambah1.Bind( wx.EVT_BUTTON, self.nambahUkuran1 )
+		self.Kurang1.Bind( wx.EVT_BUTTON, self.kurangiUkuran1 )
+		self.Tambah2.Bind( wx.EVT_BUTTON, self.nambahUkuran2 )
+		self.Kurang2.Bind( wx.EVT_BUTTON, self.kurangiUkuran2 )
+		self.Tambah3.Bind( wx.EVT_BUTTON, self.nambahUkuran3 )
+		self.Kurang3.Bind( wx.EVT_BUTTON, self.kurangiUkuran3 )
+		self.Tambah4.Bind( wx.EVT_BUTTON, self.nambahUkuran4 )
+		self.Kurang4.Bind( wx.EVT_BUTTON, self.kurangiUkuran4 )
+		self.Tambah5.Bind( wx.EVT_BUTTON, self.nambahUkuran5 )
+		self.Kurang5.Bind( wx.EVT_BUTTON, self.kurangiUkuran5 )
 
 	def __del__( self ):
 		pass
@@ -440,6 +452,36 @@ class FramePengguna ( wx.Frame ):
 
 	# Virtual event handlers, overide them in your derived class
 	def OnKillFocusJenisMakanan( self, event ):
+		event.Skip()
+
+	def nambahUkuran1( self, event ):
+		event.Skip()
+
+	def kurangiUkuran1( self, event ):
+		event.Skip()
+
+	def nambahUkuran2( self, event ):
+		event.Skip()
+
+	def kurangiUkuran2( self, event ):
+		event.Skip()
+
+	def nambahUkuran3( self, event ):
+		event.Skip()
+
+	def kurangiUkuran3( self, event ):
+		event.Skip()
+
+	def nambahUkuran4( self, event ):
+		event.Skip()
+
+	def kurangiUkuran4( self, event ):
+		event.Skip()
+
+	def nambahUkuran5( self, event ):
+		event.Skip()
+
+	def kurangiUkuran5( self, event ):
 		event.Skip()
 
 

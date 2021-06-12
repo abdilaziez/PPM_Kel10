@@ -32,6 +32,63 @@ class MyFramePengguna(ppm.FramePengguna):
         for item in dataMakanan:
             self.choice_makanan.Append(item[1])
 
+        self.Angka1 = 0
+        self.Angka2 = 0
+        self.Angka3 = 0
+        self.Angka4 = 0
+        self.Angka5 = 0
+
+    def nambahUkuran1(self, event):
+        self.Angka1 += 1
+        self.kotakHasil1.SetValue(str(self.Angka1))
+        
+    
+    def nambahUkuran2(self, event):
+        self.Angka2 += 1
+        self.kotakHasil2.SetValue(str(self.Angka2))
+
+    def nambahUkuran3(self, event):
+        self.Angka3 += 1
+        self.kotakHasil3.SetValue(str(self.Angka3))
+
+    def nambahUkuran4(self, event):
+        self.Angka4 += 1
+        self.kotakHasil4.SetValue(str(self.Angka4))
+
+    def nambahUkuran5(self, event):
+        self.Angka5 += 1
+        self.kotakHasil5.SetValue(str(self.Angka5))
+
+    def kurangiUkuran1(self, event):
+        self.Angka1 -= 1
+        if self.Angka1 < 0 :
+            self.Angka1 = 0
+        self.kotakHasil1.SetValue(str(self.Angka1))
+
+    def kurangiUkuran2(self, event):
+        self.Angka2 -= 1
+        if self.Angka2 < 0 :
+            self.Angka2 = 0
+        self.kotakHasil2.SetValue(str(self.Angka2))
+
+    def kurangiUkuran3(self, event):
+        self.Angka3 -= 1
+        if self.Angka3 < 0 :
+            self.Angka3 = 0
+        self.kotakHasil3.SetValue(str(self.Angka3))
+
+    def kurangiUkuran4(self, event):
+        self.Angka4 -= 1
+        if self.Angka4 < 0 :
+            self.Angka4 = 0
+        self.kotakHasil4.SetValue(str(self.Angka4))
+
+    def kurangiUkuran5(self, event):
+        self.Angka5 -= 1
+        if self.Angka5 < 0 :
+            self.Angka5 = 0
+        self.kotakHasil5.SetValue(str(self.Angka5))
+
     def OnKillFocusJenisMakanan( self, event ):
         self.choice_makanan.Clear()
         dataTipeMakanan = self.tabelJenisMakanan.getIdJenisMakananByNama(self.choice_jenis_makanan.GetString(self.choice_jenis_makanan.GetCurrentSelection()))
@@ -48,7 +105,6 @@ class MyFrameAdmin(ppm.FrameAdmin):
 
     def OnButtonClickSimpan( self, event ):
         jenisMakanan = self.tabelJenisMakanan.getIdJenisMakananByNama(self.in_jenisMakanan.GetValue())
-        print(jenisMakanan)
         simpan = self.tabelMakanan.simpanMakanan((
             self.in_namaMakanan.GetValue(), 
             jenisMakanan, 
